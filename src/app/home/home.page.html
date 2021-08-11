@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar [hidden]="!bannerIsVisible" id="second-toolbar" color="medium">
+        <ion-text text-wrap id="second-title">
+            Benvenuto,
+            <br> stiamo ancora scaricando dati neccessari per il corretto funzionamento dell'app in background,
+            rimani collegato alla rete, una volta scaricati questo banner scomparirà in automaitco.
+        </ion-text>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="padding">
+
+    <ion-grid style="height: 95%;">
+        <ion-row style="height: 100%;" class="justify-content-center align-items-center">
+            <ion-col sizeMd="4" sizeSm="12">
+                Welcome
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+</ion-header>
+<ion-content class="padding">
+	<div flex-content-centered>
+
+		<form action="" [formGroup]="loginForm">
+			<ion-grid>
+				<ion-row class="padding-bottom">
+					<ion-col>
+						<img alt="" src="assets/img/BAT_logo.png" width="220">
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-item>
+							<!--<ion-label position="stacked">Username</ion-label>-->
+							<ion-input type="text" placeholder="Username" name="username"
+									formControlName="username"></ion-input>
+							<ion-text color="danger"
+									*ngIf="loginForm.controls.username.invalid && loginForm.controls.username.dirty">
+								Username is invalid
+							</ion-text>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-item>
+							<!--<ion-label position="stacked">Password</ion-label>-->
+							<ion-input type="password" placeholder="Password" name="password"
+									formControlName="password"></ion-input>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+						<ion-button expand="block" color="success" (click)="login()" [disabled]="loginForm.invalid">
+							Accedi
+						</ion-button>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+						<ion-button class="margin-top" *ngIf="canInstallPwa()" (click)="doInstallPwa()"
+								size="default">
+							<ion-icon slot="start" name="cloud-download"></ion-icon>
+							<ion-label>&nbsp;Installa Web App</ion-label>
+						</ion-button>
+
+					</ion-col>
+				</ion-row>
+
+			</ion-grid>
+
+		</form>
+	</div>
+
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<small>Powered by Pardgroup S.p.A.&copy;2019. All rights reserved.</small>
+	</ion-toolbar>
+</ion-footer>

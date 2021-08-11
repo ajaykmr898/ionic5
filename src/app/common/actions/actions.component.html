@@ -1,0 +1,4 @@
+<ion-item *ngFor="let action of actions" (click)="closeAction(action.action)">
+  <ion-icon slot="start" [name]="action.icon"></ion-icon>
+  <ion-label text-wrap>{{action.name}}</ion-label>
+</ion-item>

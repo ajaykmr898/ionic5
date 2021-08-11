@@ -16,7 +16,7 @@ echo "Running $project image..."
 docker run -dit --rm --name $project -v $(pwd):/var/www/html/$project -p 8100:8100 $project
 echo "Installing node packages... 0%"
 docker exec -d $project npm install
-for i in {1..10}; do echo "Installing node packages... $(( 10*i ))%"; sleep 5; done
+#for i in {1..10}; do echo "Installing node packages... $(( 10*i ))%"; sleep 5; done
 echo "npm packages installed"
 echo "Compiling $project app... 0%"
 docker exec -d $project npm run local
