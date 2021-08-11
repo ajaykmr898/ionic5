@@ -78,6 +78,10 @@ export class AppComponent {
     }
   }
 
+  public canInstallPwa() {
+    return !!deferredAddToHomePrompt;
+  }
+
   public doInstallPwa() {
     console.debug('doInstallPwa()');
     // noinspection TypeScriptValidateJSTypes
