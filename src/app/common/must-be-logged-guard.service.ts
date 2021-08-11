@@ -2,9 +2,6 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 
-/**
- * Importare sempre authService se la pagina su cui atterrera' fara' delle chiamate http
- */
 @Injectable({
     providedIn: 'root'
 })

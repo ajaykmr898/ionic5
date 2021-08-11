@@ -46,7 +46,7 @@ export class InterceptorService {
 
                 // AGX: axios generalmente ritorna 504 quando sei offline
                 if (error.response.status===504) {
-                    console.warn('axios fallito perché offline');
+                    console.warn('axios failed because offline');
                     return error;
                 }
 

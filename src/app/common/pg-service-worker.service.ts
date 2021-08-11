@@ -49,7 +49,7 @@ export class PgServiceWorkerService {
 				console.debug('current', event.current);
 				console.debug('available', event.available);
 
-				const res: boolean = await this.util.createConfirm('È disponibile una nuova versione.', 'Aggiornamento disponibile', 'Non ora', 'Aggiorna');
+				const res: boolean = await this.util.createConfirm('New version available.', 'Update available', 'Non now', 'Update');
 				if (res) {
 					console.debug('[SW] attivazione');
 					this.sw.activateUpdate()
@@ -70,15 +70,15 @@ export class PgServiceWorkerService {
 				console.debug('current', event.previous);
 				console.debug('available', event.current);
 
-				const res: boolean = await this.util.createConfirm('L\'aggiornamento è stato scaricato con successo.<br>' +
-					'È necessario riavviare l\'App per rendere effettive le modifiche.<br>' +
-					'<b>I dati non salvati andranno persi.</b>', 'Aggiornamento completato', 'Rimanda', 'Riavvia ora');
+				const res: boolean = await this.util.createConfirm('Update downloaded successfully.<br>' +
+					'Reload the app to make changes work.<br>' +
+					'<b>Unsaved data will be lost.</b>', 'Update completed', 'Delay', 'Reload');
 
 				if (res) {
 					console.info('[SW] reloading the app ...');
 					document.location.reload(true);
 				} else {
-					await this.util.createDialog('Potrai riavviare l\'App toccando “Riavvia App” dal menù.', 'Aggiornamento rimandato');
+					await this.util.createDialog('You can  reload app with “Restart App” from menu.', 'Update delayed');
 				}
 			}, err => {
 				console.error('activated', err);

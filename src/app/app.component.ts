@@ -90,9 +90,9 @@ export class AppComponent {
 
 
   public doCheckUpdates() {
-    this.util.showToast('Verifica disponibilità di aggiornamenti in background...\nL\'operazione potrebbe richiedere alcuni minuti.', {
+    this.util.showToast('Checking updates in background...\nThis operation may take some minutes.', {
       color: 'success',
-      duration: 2000
+      duration: 3000
     })
       .catch(console.error);
     this.sw.checkForUpdate();

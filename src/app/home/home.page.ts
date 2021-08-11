@@ -33,14 +33,14 @@ export class HomePage implements OnInit {
         }
         let res1 = await this.banner.showAlert();
         if (res1) {
-            let message = 'Stiamo scaricando i dati neccesari per il corretto funzionamento dell\'app in background, rimani collegato alla rete';
-            await this.utils.showAlert('Attenzione', [], [{text: 'Ok', role: 'confirm', cssClass: 'success'}], {message: message, backdropDismiss: false });
+            let message = 'We are downloading app functionalities in background, stay connected to internet';
+            await this.utils.showAlert('Warning', [], [{text: 'Ok', role: 'confirm', cssClass: 'success'}], {message: message, backdropDismiss: false });
         }
     };
 
     public showConnectionAlert = async () => {
-        let message = 'Hai perso la connessione alla rete nella fase di scaricamento dati. L\'app potrebbe non funzionare correttamente senza rete';
-        await this.utils.showAlert('Attenzione', [], [{text: 'Chiudi', role: 'confirm', cssClass: 'success'}], {message: message, backdropDismiss: false });
+        let message = 'Connection Lost. The app may not work properly without internet';
+        await this.utils.showAlert('Warning', [], [{text: 'Close', role: 'confirm', cssClass: 'success'}], {message: message, backdropDismiss: false });
     };
 
     public clicked = (index: number) => {

@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay" *ngIf="authService.isLogged()">
+    <ion-menu class="menu" contentId="main-content" type="overlay" *ngIf="authService.isLogged()">
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Inbox</ion-list-header>
@@ -20,17 +20,17 @@
           </ion-item>
           <ion-item lines="none" *ngIf="canInstallPwa()" (click)="doInstallPwa()">
             <ion-icon slot="start" name="cloud-download"></ion-icon>
-            <ion-label>Installa</ion-label>
+            <ion-label>Install</ion-label>
           </ion-item>
 
           <ion-item lines="none" (click)="doCheckUpdates()">
             <ion-icon slot="start" name="list"></ion-icon>
-            <ion-label>Controlla aggiornamenti</ion-label>
+            <ion-label>Check Updates</ion-label>
           </ion-item>
 
           <ion-item lines="none" (click)="doRefreshBrowser()">
             <ion-icon slot="start" name="sync"></ion-icon>
-            <ion-label>Riavvia App</ion-label>
+            <ion-label>Restart App</ion-label>
           </ion-item>
         </ion-list>
       </ion-content>

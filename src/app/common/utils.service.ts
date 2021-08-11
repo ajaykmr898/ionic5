@@ -19,13 +19,6 @@ export interface IEndpointRequest {
 	}
 }
 
-
-/*
- * NOTA: Popover e Modal non possono essere usati in un servizio con providedIn 'root'
- *       NON USARE:     providedIn: 'root'
- *       E iniettare il servizio in commonmodule e usarlo da li
- */
-
 @Injectable()
 export class UtilsService {
 
@@ -80,7 +73,7 @@ export class UtilsService {
 	}
 
 
-	public showLoading = async (message: string = 'Caricamento...', extra?) => {
+	public showLoading = async (message: string = 'Loading...', extra?) => {
 		const loading = await this.loadingController.create({
 			spinner: null,
 			message: message,
@@ -233,14 +226,6 @@ export class UtilsService {
 	};
 */
 
-	/**
-	 * NOTA: Non si dovrebbe cambiare il nome a funzioni già usate da altri
-	 * in Extra puoi passare un oggetto con tutto quello extra {message:'stringa',cssClass:'danger',etc:etc}
-	 * @param header
-	 * @param inputs
-	 * @param buttons
-	 * @param extra
-	 */
 	public showAlert = async (header, inputs?, buttons?, extra?): Promise<any> => {
 		const alert = await this.alertController.create({
 			header,
