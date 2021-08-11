@@ -1,0 +1,18 @@
+version: 0.1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        - npm install -g @angular/cli
+        - npm install -g @ionic/cli
+    build:
+      commands:
+        - ionic build --prod --aot --service-worker
+  artifacts:
+    baseDirectory: www
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
