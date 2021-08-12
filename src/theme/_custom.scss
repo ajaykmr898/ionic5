@@ -10,7 +10,7 @@ $toolbar-header-background: #e95768;
 $toolbar-header-color: #fff;
 $toolbar-content-background: #e95768;
 
-$content-header-background: #fff;
+$content-header-background: #3d3d3d;
 $content-header-color: #fff;
 $content-content-background: #3d3d3d;
 
@@ -45,4 +45,63 @@ div[flex-content-centered] {
 .circle {
 	border-radius: 50%;
 }
+
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+$custom-palette: igx-palette(
+  $primary: #09f,
+  $secondary: #e95768,
+  $surface: #323232, //#5d6565
+  $error: #e95768,
+  $success: #4eb862,
+  $warn: #fbb13c,
+  $info: #1377d5,
+  $grays: #000,
+);
+
+$my-dialog-theme: igx-dialog-theme(
+  $background: #323232,
+  $title-color: #e95768,
+  $message-color: #fefefe,
+  $border-radius: .3,
+);
+
+$custom-calendar-theme: igx-calendar-theme(
+  $header-background: #e95768,
+  $content-background: #323232,
+  $header-text-color: #000,
+  $date-current-text-color: #e95768,
+  $picker-arrow-color: #e95768,
+  $picker-background-color: #323232,
+  $date-selected-text-color: #fff,
+  $date-current-bg-color: #323232,
+  $picker-arrow-hover-color: #e95768,
+  $year-current-text-color: #e95768,
+  $year-hover-text-color: #e95768,
+  $month-current-text-color: #e95768,
+  $month-hover-text-color: #e95768,
+  $picker-text-color: #e95768,
+  $picker-text-hover-color: #e95768,
+  $date-disabled-text-color: #505050,
+  $inactive-text-color: #eee
+);
+
+$custom-input-group: igx-input-group-theme(
+  $filled-text-color: #fff,
+  $focused-text-color: #fff,
+  $idle-text-color: #e95768,
+  $idle-bottom-line-color: #323232,
+  $interim-bottom-line-color: #323232,
+  $hover-bottom-line-color: #e95768,
+  $focused-secondary-color: #e95768,
+  $box-background: #323232
+);
+
+@import "~material-design-icons/iconfont/material-icons.css";
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-theme($palette: $custom-palette, $schema: $light-schema, $roundness: 1, $elevation: null);
+@include igx-typography($font-family: "Titillium Web", $type-scale: $default-type-scale);
+@include igx-css-vars($custom-calendar-theme);
+@include igx-css-vars($custom-input-group);
+@include igx-css-vars($my-dialog-theme);
 

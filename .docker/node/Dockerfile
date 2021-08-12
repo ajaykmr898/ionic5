@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:14
 
 RUN useradd -ms /bin/bash nodeuser
 RUN usermod -aG node nodeuser

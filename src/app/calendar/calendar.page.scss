@@ -1,0 +1,71 @@
+.small-label {
+  font-size: 18px;
+}
+
+.full {
+  width: 100%;
+  background-color: #505050;
+  border-top: 1px solid #fff;
+}
+
+.clicked {
+  background-color: var(--button-color, #e95768);
+  color: #fff;
+}
+
+.round {
+  border-radius: 5px !important;
+}
+
+ion-content {
+  background-color: var(--background-color, #5c6565);
+  --background-color: var(--background-color, #5c6565);
+}
+
+.add_button {
+  color: #e95768;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  border:solid 1px #fff;
+  border-radius: 5px;
+  background: #323232;
+  font-size: 25px;
+
+  ion-icon {
+    font-size: 40px;
+  }
+}
+
+.add_button:hover {
+  background: #3d3d3d;
+  color: #e95768;
+  font-size: 35px;
+
+  ion-icon {
+    font-size: 50px;
+  }
+}
+
+.events-label {
+  margin-top: 30px;
+  margin-left: 10px;
+  color: #e95768;
+  font-size: 20px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.success-icon {
+  color: green;
+}
+
+.waiting-icon {
+  color: yellow;
+}
+
+.cancel-icon {
+  color: red;
+}

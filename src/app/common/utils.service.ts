@@ -142,7 +142,7 @@ export class UtilsService {
 			duration: 2000,
 			...extra,
 		});
-		if (extra.redirect) {
+		if (extra && extra.redirect) {
 			toast.onDidDismiss().then(async () => {
 				await this.hideLoading();
 				await this.router.navigateByUrl(extra.redirect);

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      Calendar
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="padding">
+  <ng-container>
+    <article class="calendar-wrapper">
+      <ion-row>
+        <ion-col sizeLg="8" sizeMd="8" sizeSm="8" sizeXs="12">
+          <igx-calendar style="border: 1px solid;" #calendar
+                        [value]="this.cal"
+                        [hasHeader]="false"
+                        [weekStart]="1"
+                        (selected)="onSelection($event)"
+                        [locale]="locale">
+          </igx-calendar>
+        </ion-col>
+        <ion-col sizeLg="4" sizeMd="4" sizeSm="4" sizeXs="12">
+          <button class="add_button" (click)="onAdd()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <br/><br/>
+            Add Event
+          </button>
+        </ion-col>
+      </ion-row>
+    </article>
+    <ion-grid class="border">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-text class="events-label">Events:</ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <div *ngIf="events.length == 0">
+        <ion-item>
+          <ion-text class="margin-left-10">No events available for the selected date</ion-text>
+        </ion-item>
+      </div>
+      <div *ngIf="events.length != 0">
+        <ion-row *ngFor="let item of events">
+          <ion-col>
+            <ion-item>
+              <ion-icon name="ellipse" [class]="getClass(item)"></ion-icon>
+              <ion-text class="margin-left-10">
+                {{item.desc}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-button (click)="edit(item)">
+            <ion-icon name="pencil-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="delete(item)">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ng-container>
+</ion-content>

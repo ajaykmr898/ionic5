@@ -16,6 +16,7 @@ import {UtilsService} from "./common/utils.service";
 export class AppComponent {
   public appPages = [
     {title: 'Home', url: '/home/', icon: 'home'},
+    {title: 'Calendar', url: '/calendar/', icon: 'calendar'}
   ];
   public selectedIndex = 0;
   public subSelectedIndex = 0;

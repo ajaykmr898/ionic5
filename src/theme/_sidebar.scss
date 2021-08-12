@@ -1,7 +1,7 @@
 ion-menu {
   --color: #{$sidemenu-header-color};
   --ion-background-color: #{$sidemenu-content-background};
-  --ion-text-color: #a7b1c2;
+  --ion-text-color: #{$sidemenu-header-color};
   --ion-toolbar-background: #{$sidemenu-header-background};
   --ion-item-background: #{$sidemenu-content-background};
 
@@ -25,21 +25,22 @@ ion-menu {
 }
 
 ion-toolbar {
-  --color: #{$toolbar-header-background};
+  --color: #{$toolbar-header-color};
   --ion-background-color: #{$toolbar-content-background};
-  --ion-text-color: #2863c7;
+  --ion-text-color: #{$toolbar-header-color};
   --ion-toolbar-background: #{$toolbar-header-background};
   --ion-item-background: #{$toolbar-content-background};
 
   ion-title {
     --color: #fff;
   }
+
 }
 
 ion-content {
-  --color: #{$content-header-background};
+  --color: #{$content-header-color};
   --ion-background-color: #{$content-content-background};
-  --ion-text-color: #a7b1c2;
+  --ion-text-color: #{$content-header-color};
   --ion-toolbar-background: #{$content-header-background};
   --ion-item-background: #{$content-content-background};
 }

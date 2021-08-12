@@ -6,32 +6,32 @@
           <ion-list-header>Inbox</ion-list-header>
           <ion-note>hi@ionicframework.com</ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-                      routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+          <ion-menu-toggle auto-hide="false">
+            <div *ngFor="let p of appPages; let i = index">
+              <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+                        routerLinkActive="selected">
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </div>
+            <ion-item lines="none" *ngIf="canInstallPwa()" (click)="doInstallPwa()">
+              <ion-icon slot="start" name="cloud-download"></ion-icon>
+              <ion-label>Install</ion-label>
+            </ion-item>
+            <ion-item lines="none" (click)="doCheckUpdates()">
+              <ion-icon slot="start" name="list"></ion-icon>
+              <ion-label>Check Updates</ion-label>
+            </ion-item>
+            <ion-item lines="none" (click)="doRefreshBrowser()">
+              <ion-icon slot="start" name="sync"></ion-icon>
+              <ion-label>Restart App</ion-label>
+            </ion-item>
+            <ion-item lines="none" routerDirection="root" routerLink="/login" detail="false" (click)="logout()"
+                      routerLinkActive="active">
+              <ion-icon slot="start" name="exit"></ion-icon>
+              <ion-label>Logout</ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-item lines="none" routerDirection="root" routerLink="/login" detail="false" (click)="logout()"
-                    routerLinkActive="active">
-            <ion-icon slot="start" name="exit"></ion-icon>
-            <ion-label>Logout</ion-label>
-          </ion-item>
-          <ion-item lines="none" *ngIf="canInstallPwa()" (click)="doInstallPwa()">
-            <ion-icon slot="start" name="cloud-download"></ion-icon>
-            <ion-label>Install</ion-label>
-          </ion-item>
-
-          <ion-item lines="none" (click)="doCheckUpdates()">
-            <ion-icon slot="start" name="list"></ion-icon>
-            <ion-label>Check Updates</ion-label>
-          </ion-item>
-
-          <ion-item lines="none" (click)="doRefreshBrowser()">
-            <ion-icon slot="start" name="sync"></ion-icon>
-            <ion-label>Restart App</ion-label>
-          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>
